@@ -6,6 +6,13 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
     <script>
+//alert(document.body.offsetWidth);//без скролл-баров
+//alert($('body').innerWidth());//1366
+//alert( document.body.clientWidth);//1349
+//alert($("#wrapper").width());//1349
+//alert($(window).width());//1366
+
+
     var imgs=[
 			 "http://rockcult.ru/wp-content/uploads/2016/02/MCL6430-1050x700.jpg",
              "http://rockcult.ru/wp-content/uploads/2016/02/MCL6432-1050x700.jpg",
@@ -22,9 +29,23 @@
 		var currentImgNum = 0;
 
 		
+/*
+function windowSize(){
+	//var browSize =document.body.offsetWidth-20;
+
+	//$("#wrapper").css("width",browSize);	
+	//$("#img").css("width",browSize);	
+	//$("#backward").css("width",browSize/2-150);
+	//$("#forward").css("width",browSize/2-50);
+    }
+
+// "два-в-одном", вместо двух последних строк:
+$(window).on('load resize',windowSize);*/
+
 
 	$(document).ready( function ()
 	{
+		//windowSize();
 
         $("#img").attr("src",imgs[currentImgNum]);
 		$("#backward").css("height",$("#img").css("height"));
@@ -62,51 +83,58 @@
 	</script>
 
 	<style>
+	body
+	{
+		margin: 0px;
+		padding: 0px;
+	}
 		img#img
 		{
-			width:500px;	
+			width:100%;	
 			position: absolute;	
 		}
 
 		div#wrapper
 		{
-			width: auto;
+			width:100%;
 		}
 
-		button
+		div
 		{
-			width: 250px;
+			width:50%;
 			padding:0px;
+			margin: 0px;
 			position: relative;
 			background: none;
 			border: none;
 			cursor:pointer;
 		    outline: none;
-
+		    float: left;
 		}
 
-		button#backward
+		div#backward
 		{
 			padding-left: 0px: 
 
 		}
 
-		button#forward
+		div#forward
 		{
 			padding-left: 250px: 
 		}
 
-
-
 	</style>
 
 </head>
-<body>
+<body>		
+
 <div id="wrapper">
-		<img src="http://rockcult.ru/wp-content/uploads/2016/02/MCL6430-1050x700.jpg" id="img">
-		<button id="backward"></button>
-		<button id="forward"></button>
-	</div>	
+<img src="http://rockcult.ru/wp-content/uploads/2016/02/MCL6430-1050x700.jpg" id="img">
+
+		<div id="backward"></div>
+		<div id="forward"></div>
+</div>			
+
 </body>
 </html>
 
