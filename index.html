@@ -21,7 +21,6 @@
 
 		var currentImgNum = 0;
 
-
 	$(document).ready( function ()
 	{
 		$("#img").attr("src",imgs[currentImgNum]);
@@ -36,8 +35,7 @@
 			$("#img").attr("src",imgs[currentImgNum]);
 		}
 			else
-			{
-			currentImgNum=imgs.length-1 ;
+			{currentImgNum=imgs.length-1 ;
 			$("#img").attr("src",imgs[currentImgNum]);
 			}
 		});
@@ -60,23 +58,24 @@
 	</script>
 
 	<style>
-	body
-	{
-		margin: 0px;
-		padding: 0px;
-	}
-		img#img
+		body
+		{
+			margin: 0px;
+			padding: 0px;
+		}
+		
+		#img
 		{
 			width:100%;	
 			position: absolute;	
 		}
 
-		div#wrapper
+		#wrapper
 		{
 			width:100%;
 		}
 
-		div
+		.arrow
 		{
 			width:50%;
 			padding:0px;
@@ -84,38 +83,18 @@
 			position: relative;
 			background: none;
 			border: none;
-			cursor:pointer;
+			cursor: pointer;
 			outline: none;
 			float: left;
 		}
-
-		div#backward
-		{
-			padding-left: 0px: 
-
-		}
-
-		div#forward
-		{
-			padding-left: 250px: 
-		}
-
 	</style>
-
 </head>
+
 <body>		
-
-<div id="wrapper">
-<img id="img">
-
-		<div id="backward"></div>
-		<div id="forward"></div>
-</div>			
-
+	<div id="wrapper">
+		<img id="img">
+		<div id="backward" class="arrow"></div>
+		<div id="forward"  class="arrow"></div>
+	</div>			
 </body>
 </html>
-
-
-
-
-
